@@ -1,42 +1,18 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "./actions";
+import MTable from "./sections/MTable";
 function App() {
-  const counter = useSelector((state) => state.counter);
-  const currentUser = useSelector((state) => state.currentUser);
-
-  console.log("nksdgbfsdgfsdf", currentUser, counter);
-  const dispatch = useDispatch();
-
-  const user = { name: "Shakir" };
-
-  useEffect(() => {
-    dispatch(allActions.userActions.setUser(user));
-  }, []);
+  // const counter = useSelector((state) => state.counter);
+  // const currentUser = useSelector((state) => state.currentUser);
+  // const tableSettings = useSelector((state)=>state.tableSettings)
+  // const dispatch = useDispatch();
 
   return (
-    <div>
-      {currentUser.loggedIn ? (
-        <>
-          <h1>Hello, {currentUser.user.name}</h1>
-          <button onClick={() => dispatch(allActions.userActions.logOut())}>
-            LogOut
-          </button>
-        </>
-      ) : (
-        <>
-          <button
-            onClick={() => dispatch(allActions.userActions.setUser(user))}
-          >
-            Login
-          </button>
-        </>
-      )}
-
-      <h1>Counter:{counter}</h1>
-      <button onClick={()=>dispatch(allActions.counterActions.increment())}>Increase</button>
-      <button onClick={()=>dispatch(allActions.counterActions.decrement())}>Increase</button>
-    </div>
+    <>
+    <MTable/>
+    </>
+    
   );
 }
 
