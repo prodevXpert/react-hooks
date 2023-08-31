@@ -3,14 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import allActions from "./actions";
 import MTable from "./sections/MTable";
 function App() {
-  // const counter = useSelector((state) => state.counter);
-  // const currentUser = useSelector((state) => state.currentUser);
-  // const tableSettings = useSelector((state)=>state.tableSettings)
-  // const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counter);
+  const currentUser = useSelector((state) => state.currentUser);
+  const tableSettings = useSelector((state)=>state.tableSettings)
+  const dispatch = useDispatch();
 
   return (
     <>
-    <MTable/>
+    <h1>
+      {counter}
+    </h1>
     </>
     
   );
